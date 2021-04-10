@@ -46,7 +46,7 @@ void main()
 	cout << "Введите стоимость одной чашки: ";
 	cin >> price_of_coffee;
 	cout << "Введите количество чашек: ";
-	cin >> number_of_cups;
+	cin >> number_of_cups;	//cin - Console In - поток ввода с клавиатуры;
 	double total_price = price_of_coffee * number_of_cups;
 	cout << "Общая стоимость: " << total_price << endl;
 }
