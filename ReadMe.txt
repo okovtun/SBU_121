@@ -4,7 +4,20 @@ https://www.youtube.com/watch?v=stz7VJSOFQU&list=PLeqyOOqxeiIMpqE-EOx0TxG64nfHbj
 TOREAD:
 https://github.com/okovtun/SBU_121/blob/master/DataTypes/DataTypes.pdf
 
+Для общего развития:
+https://www.softelectro.ru/ieee754.html
+
 TODO:
+Написать программу "3Dshooter", которая в зависимости от нажатой клавиши WASD, пробел, Enter
+выводит в консоль соответствующее действие
+w - вперед;
+s - назад;
+a - влево;
+d - вправо;
+пробел - прыжок;
+Enter - выстрел;
+
+DONE:
 1. Написать программу "Калькулятор", которая вычисляет выражения вида:
 	2+3
 	2+3=5;

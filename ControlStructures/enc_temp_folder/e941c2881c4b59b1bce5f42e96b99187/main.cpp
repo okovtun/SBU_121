@@ -83,8 +83,4 @@ void main()
 						//и возвращает ASCII-код нажатой клавиши.
 		cout << (int)key << tab << key << endl;
 	} while (true);
-	__asm
-	{
-		
-	}
 }
