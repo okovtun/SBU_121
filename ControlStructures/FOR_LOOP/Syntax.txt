@@ -1,0 +1,6 @@
+for(Start; Stop; Step ++/--)
+{
+	...;
+	group-of-statements;
+	...;
+}
