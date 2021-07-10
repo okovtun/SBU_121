@@ -27,25 +27,19 @@ int g_a;//Глобальная переменная, ее видят все функции, и ее может изменить любая
 const int ROWS = 5;
 const int COLS = 8;
 
-void FillRand(int arr[], const int n);
+template<typename T>//T - имя шаблонного типа.
+void FillRand(T arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);	//Function declaration - Объявление функции (Прототип функции)
 
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>void Print(T arr[], const int n);
+template<typename T>void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>void PrintReverse(T arr[], const int n);
 
-void PrintReverse(int arr[], const int n);
-void PrintReverse(double arr[], const int n);
-
-int  Sum(int arr[], const int n);
-double  Sum(double arr[], const int n);
-
-double Avg(int arr[], const int n);
-double Avg(double arr[], const int n);
-
-int minValueIn(int arr[], const int n);
-int maxValueIn(int arr[], const int n);
+template<typename T>T Sum(T arr[], const int n);
+template<typename T>double Avg(T arr[], const int n);
+template<typename T>T minValueIn(T arr[], const int n);
+template<typename T>T maxValueIn(T arr[], const int n);
 
 #define ARRAYS_1
 #define ARRAYS_2
@@ -77,7 +71,7 @@ void main()
 	Print(i_arr_2, ROWS, COLS);
 }
 
-void FillRand(int arr[], const int n)
+template<typename T>void FillRand(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -104,7 +98,7 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)	//Function de
 	}
 }
 
-void Print(int arr[], const int n)
+template<typename T>void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -112,15 +106,7 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << tab;
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+template<typename T>void Print(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -131,61 +117,40 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 		cout << endl;
 	}
 }
+template<typename T>void PrintReverse(T arr[], const int n)
+{
+	for (int i = n - 1; i >= 0; i--)
+	{
+		cout << arr[i] << tab;
+	}
+	cout << endl;
+}
 
-void PrintReverse(int arr[], const int n)
+template<typename T>T Sum(T arr[], const int n)	//Возвращаемое значение шаблонного типа.
 {
-	for (int i = n - 1; i >= 0; i--)
-	{
-		cout << arr[i] << tab;
-	}
-	cout << endl;
-}
-void PrintReverse(double arr[], const int n)
-{
-	for (int i = n - 1; i >= 0; i--)
-	{
-		cout << arr[i] << tab;
-	}
-	cout << endl;
-}
-int  Sum(int arr[], const int n)
-{
-	int sum = 0;
+	T sum = 0;	//Локальная переменная шаблонного типа
 	for (int i = 0; i < n; i++)
 	{
 		sum += arr[i];
 	}
 	return sum;
 }
-double  Sum(double arr[], const int n)
-{
-	double sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		sum += arr[i];
-	}
-	return sum;
-}
-double Avg(int arr[], const int n)
+template<typename T>double Avg(T arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
 }
-double Avg(double arr[], const int n)
+template<typename T>T minValueIn(T arr[], const int n)
 {
-	return Sum(arr, n) / n;
-}
-int minValueIn(int arr[], const int n)
-{
-	int min = arr[0];
+	T min = arr[0];
 	for (int i = 0; i < n; i++)
 	{
 		if (arr[i] < min)min = arr[i];
 	}
 	return min;
 }
-int maxValueIn(int arr[], const int n)
+template<typename T>T maxValueIn(T arr[], const int n)
 {
-	int max = arr[0];
+	T max = arr[0];
 	for (int i = 0; i < n; i++)
 	{
 		if (arr[i] > max)max = arr[i];
