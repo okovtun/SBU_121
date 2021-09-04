@@ -3,11 +3,11 @@ https://www.youtube.com/watch?v=stz7VJSOFQU&list=PLeqyOOqxeiIMpqE-EOx0TxG64nfHbj
 
 TODO:
 1. В проекте NULLTerminatedLines написать функции 
-	void to_upper(char str[]);		//Переводит строку в верхний регистр
+	void to_upper(char str[]);		//Переводит строку в верхний регистр	DONE
 	void to_lower(char str[]);		//Переводит строку в нижний  регистр
-	void shrink(char str[]);		//Удаляет из строки лишние пробелы
+	void shrink(char str[]);		//Удаляет из строки лишние пробелы		DONE
 
-	bool is_palindrome(char str[]);	//Проверяет, является ли строка палиндромом
+	bool is_palindrome(char str[]);	//Проверяет, является ли строка палиндромом	DONE
 	
 	bool is_integer(char str[]);	//Проверяет, является ли строка целым числом
 	bool is_bin(char str[]);	//Проверяет, является ли строка двоичным числом
@@ -17,6 +17,9 @@ TODO:
 	??? hex2dec(???);	//если строка является шестнадцатеричным числом, функция возвращает его десятичное значение
 	??? dec2bin(???);
 	??? dec2hex(???);
+
+	bool is_mac_address(char str[]);
+	bool is_ip_address(char str[]);
 	
 	=================================================================================================
 
